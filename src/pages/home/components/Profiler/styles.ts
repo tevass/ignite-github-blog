@@ -9,6 +9,7 @@ export const ProfilerContainer = styled.section`
     0px -50px 100px rgba(20, 88, 156, 0.3);
 
   margin-top: -7rem;
+  margin-bottom: 4.5rem;
 `
 
 export const ProfilerWrapper = styled.div`
