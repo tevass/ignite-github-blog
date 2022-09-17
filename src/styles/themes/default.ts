@@ -13,13 +13,13 @@ export const defaultTheme = {
     'base-input': '#040F1A',
   },
   fonts: {
-    'title-lg': 'bold normal 1.5rem',
-    'title-md': 'bold normal 1.25rem',
-    'title-sm': 'bold normal 1.125rem',
+    'title-lg': 'bold normal 1.5rem/1.6 "Nunito"',
+    'title-md': 'bold normal 1.25rem/1.6 "Nunito"',
+    'title-sm': 'bold normal 1.125rem/1.6 "Nunito"',
 
-    'text-md': 'regular normal 1rem',
-    'text-sm': 'regular normal 0.875rem',
+    'text-md': '400 normal 1rem/1.6 "Nunito"',
+    'text-sm': '400 normal 0.875rem/1.6 "Nunito"',
 
-    link: 'bold regular 0.75rem',
+    link: 'bold normal 0.75rem/1.6 "Nunito"',
   },
 } as const

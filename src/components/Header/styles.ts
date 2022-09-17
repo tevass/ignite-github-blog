@@ -8,12 +8,12 @@ export const HeaderContainer = styled.header`
   align-items: center;
   justify-content: center;
 
-  padding: 4rem 1rem 8rem;
+  padding: 3rem 1rem 9rem;
 
   background: ${(props) => props.theme.colors['base-profile']};
-`
 
-export const HeaderContent = styled.div``
+  z-index: -1;
+`
 
 const LineEffect = styled.img`
   position: absolute;

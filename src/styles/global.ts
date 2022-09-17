@@ -27,4 +27,8 @@ export const GlobalStyles = createGlobalStyle`
     font-family: Nunito, sans-serif;
     line-height: 160%;
   }
+
+  h1, h2, h3 {
+    color: ${(props) => props.theme.colors['base-title']};
+  }
 `
