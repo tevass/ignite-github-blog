@@ -31,4 +31,8 @@ export const GlobalStyles = createGlobalStyle`
   h1, h2, h3 {
     color: ${(props) => props.theme.colors['base-title']};
   }
+
+  a {
+    text-decoration: none;
+  }
 `
