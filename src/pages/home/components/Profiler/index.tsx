@@ -25,7 +25,7 @@ export function Profiler() {
         <ProfilerContent>
           <ProfilerHeader>
             <h1>Estevão</h1>
-            <GitHubLink />
+            <GitHubLink label="Link" />
           </ProfilerHeader>
           <p>
             Tristique volutpat pulvinar vel massa, pellentesque egestas. Eu

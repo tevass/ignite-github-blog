@@ -3,10 +3,14 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 import { GitHubLinkContainer } from './styles'
 
-export function GitHubLink() {
+interface GitHubLinkProps {
+  label: string
+}
+
+export function GitHubLink({ label }: GitHubLinkProps) {
   return (
     <GitHubLinkContainer href="/">
-      <span>Link</span>
+      <span>{label}</span>
       <FontAwesomeIcon icon={faArrowUpRightFromSquare} />
     </GitHubLinkContainer>
   )
