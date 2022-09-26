@@ -1,27 +1,31 @@
+import ReactMarkdown from 'react-markdown'
 import { Link } from 'react-router-dom'
+
 import { PostContainer } from './styles'
 
-export function Post() {
+interface PostIssue {
+  id: number
+  title: string
+  body: string
+  createdAt: string
+}
+
+interface PostProps {
+  post: PostIssue
+}
+
+export function Post({ post }: PostProps) {
   return (
-    <Link to="/">
+    <Link to={`/posts/${post.id}`}>
       <PostContainer>
         <header>
-          <h3>JavaScript data types and data structures</h3>
-          <time>Há 1 dia</time>
+          <h3>{post.title}</h3>
+          <time>{post.createdAt}</time>
         </header>
 
-        <p>
-          Programming languages all have built-in data structures, but these
-          often differ from one language to another. This article attempts to
-          list the built-in data structures available in JavaScript and what
-          properties they have. These can be used to build other data
-          structures. Wherever possible, comparisons with other languages are
-          drawn. Dynamic typing JavaScript is a loosely typed and dynamic
-          language. Variables in JavaScript are not directly associated with any
-          particular value type, and any variable can be assigned (and
-          re-assigned) values of all types: let foo = 42; // foo is now a number
-          foo = bar; // foo is now a string foo = true; // foo is now a boolean
-        </p>
+        <div>
+          <ReactMarkdown>{post.body}</ReactMarkdown>
+        </div>
       </PostContainer>
     </Link>
   )

@@ -1,18 +1,23 @@
 import { Post } from './Post'
 import { PostListContainer } from './styles'
 
-export function PostList() {
+interface PostIssue {
+  id: number
+  title: string
+  body: string
+  createdAt: string
+}
+
+interface PostListProps {
+  posts: PostIssue[]
+}
+
+export function PostList({ posts }: PostListProps) {
   return (
     <PostListContainer>
-      <Post />
-      <Post />
-      <Post />
-      <Post />
-      <Post />
-      <Post />
-      <Post />
-      <Post />
-      <Post />
+      {posts.map((post) => {
+        return <Post key={post.id} post={post} />
+      })}
     </PostListContainer>
   )
 }

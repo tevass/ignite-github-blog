@@ -1,3 +1,6 @@
+import { useFormContext } from 'react-hook-form'
+import { SearchFormData } from '../Content'
+
 import {
   SearchFormContainer,
   SearchFormContent,
@@ -5,15 +8,28 @@ import {
   SearchFormHeader
 } from './styles'
 
-export function SearchForm() {
+interface SearchFormProps {
+  postsAmount: number
+}
+
+export function SearchForm({ postsAmount }: SearchFormProps) {
+  const { register } = useFormContext<SearchFormData>()
+
   return (
     <SearchFormContainer>
       <SearchFormHeader>
         <h2>Publicações</h2>
-        <span>6 publicações</span>
+        <span>
+          {' '}
+          {postsAmount} {postsAmount > 1 ? 'publicações' : 'publicação'}{' '}
+        </span>
       </SearchFormHeader>
       <SearchFormContent>
-        <input type="text" placeholder="Buscar conteúdo" />
+        <input
+          type="text"
+          placeholder="Buscar conteúdo"
+          {...register('query')}
+        />
       </SearchFormContent>
     </SearchFormContainer>
   )

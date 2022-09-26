@@ -1,13 +1,11 @@
-import { PostList } from './components/PostList'
+import { Content } from './components/Content'
 import { Profiler } from './components/Profiler'
-import { SearchForm } from './components/SearchForm'
 
 export function Home() {
   return (
     <div>
       <Profiler />
-      <SearchForm />
-      <PostList />
+      <Content />
     </div>
   )
 }

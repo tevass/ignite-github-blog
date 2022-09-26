@@ -5,11 +5,12 @@ import { GitHubLinkContainer } from './styles'
 
 interface GitHubLinkProps {
   label: string
+  href: string
 }
 
-export function GitHubLink({ label }: GitHubLinkProps) {
+export function GitHubLink({ label, href }: GitHubLinkProps) {
   return (
-    <GitHubLinkContainer href="/">
+    <GitHubLinkContainer href={href} target="_blank">
       <span>{label}</span>
       <FontAwesomeIcon icon={faArrowUpRightFromSquare} />
     </GitHubLinkContainer>

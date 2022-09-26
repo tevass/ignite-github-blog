@@ -8,9 +8,9 @@ import { Post } from './pages/Post'
 export function Router() {
   return (
     <Routes>
-      <Route path="/" element={<Layout />}>
-        <Route path="/" element={<Home />} />
-        <Route path="/:id" element={<Post />} />
+      <Route path="/posts" element={<Layout />}>
+        <Route index element={<Home />} />
+        <Route path=":id" element={<Post />} />
       </Route>
     </Routes>
   )

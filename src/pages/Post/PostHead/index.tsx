@@ -20,11 +20,14 @@ export function PostHead() {
     <PostHeadContainer>
       <div>
         <PostHeadLinks>
-          <Link to="/">
+          <Link to="/posts">
             <FontAwesomeIcon icon={faChevronLeft} />
             <span>Voltar</span>
           </Link>
-          <GitHubLink label="ver no github" />
+          <GitHubLink
+            label="ver no github"
+            href="https://github.com/EST3V4O/ignite-github-blog"
+          />
         </PostHeadLinks>
 
         <h1>JavaScript data types and data structures</h1>

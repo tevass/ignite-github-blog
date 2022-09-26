@@ -34,7 +34,7 @@ export const PostContainer = styled.article`
     }
   }
 
-  p {
+  div {
     font: ${(props) => props.theme.fonts['text-md']};
     color: ${(props) => props.theme.colors['base-text']};
 
