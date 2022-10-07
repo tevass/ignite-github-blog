@@ -1,12 +1,10 @@
-import * as dateFns from 'date-fns'
-import ptBR from 'date-fns/esm/locale/pt-BR'
-
 import { useCallback, useEffect, useState } from 'react'
 import { FormProvider, useForm, useWatch } from 'react-hook-form'
 
 import { useDebounce } from '../../../hooks/useDebounce'
 
 import { githubAPI } from '../../../services/github'
+import { formatToNow } from '../../../utils/formatToNow'
 
 import { PostList } from './PostList'
 import { SearchForm } from './SearchForm'
@@ -32,12 +30,6 @@ interface PostIssue {
 export interface SearchFormData {
   query: string
 }
-
-const formatToNow = (date: string) =>
-  dateFns.formatDistanceToNow(dateFns.parseISO(date), {
-    locale: ptBR,
-    addSuffix: true,
-  })
 
 export function Content() {
   const [posts, setPosts] = useState<PostIssue[]>([])

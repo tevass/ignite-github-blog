@@ -15,7 +15,19 @@ import { IconLabel } from './IconLabel'
 
 import { PostHeadContainer, PostHeadDetails, PostHeadLinks } from './styles'
 
-export function PostHead() {
+interface Head {
+  title: string
+  time: string
+  comments: number
+  user: string
+  repositoryUrl: string
+}
+
+interface PostHeadProps {
+  head: Head
+}
+
+export function PostHead({ head }: PostHeadProps) {
   return (
     <PostHeadContainer>
       <div>
@@ -24,18 +36,17 @@ export function PostHead() {
             <FontAwesomeIcon icon={faChevronLeft} />
             <span>Voltar</span>
           </Link>
-          <GitHubLink
-            label="ver no github"
-            href="https://github.com/EST3V4O/ignite-github-blog"
-          />
+          <GitHubLink label="ver no github" href={head.repositoryUrl} />
         </PostHeadLinks>
 
-        <h1>JavaScript data types and data structures</h1>
+        <h1>{head.title}</h1>
 
         <PostHeadDetails>
-          <IconLabel icon={faGithub}>estevao</IconLabel>
-          <IconLabel icon={faCalendarDay}>Há 1 dia</IconLabel>
-          <IconLabel icon={faComment}>5 comentários</IconLabel>
+          <IconLabel icon={faGithub}>{head.user}</IconLabel>
+          <IconLabel icon={faCalendarDay}>{head.time}</IconLabel>
+          <IconLabel icon={faComment}>
+            {head.comments} {head.comments > 1 ? 'comentários' : 'comentário'}
+          </IconLabel>
         </PostHeadDetails>
       </div>
     </PostHeadContainer>
